@@ -5,8 +5,8 @@ import Home from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
 import Carou from "./pages/Carou.jsx";
 import store from "./store/store";
-import { lazy, Suspense } from "react";
-import { Provider } from "react-redux";
+import { lazy, Suspense, useEffect } from "react";
+import { Provider, useDispatch } from "react-redux";
 import UserProfile from "./pages/UserProfile.jsx";
 import ForgotPassword from "./pages/ForgotPassword.jsx";
 import EditProfile from "./pages/EditProfile.jsx";
@@ -39,9 +39,11 @@ import AddAgencyCar2 from "./pages/AddAgencyCar2.jsx";
 import AddCarAgency3 from "./pages/AddCarAgency3.jsx";
 import Dmap from "./pages/Dmap.jsx";
 import AllBookings from "./pages/AllBookings.jsx";
+import AddReview from "./pages/AddReview.jsx";
 // import AddReview from "./components/AddReview.jsx";
 import TransportationMap from "./pages/TransportationMap.jsx";
 import EditAgencyProfile from "./pages/EditAgencyProfile.jsx";
+import Userprofile1 from "./pages/UserProfile1.jsx";
 const Stack = createStackNavigator();
 
 function App() {
@@ -58,6 +60,16 @@ function App() {
               options={{ headerShown: false }}
             />
             {/* {(props) => <Home {...props} style={globalStyles.global} />} */}
+            <Stack.Screen
+              name="AddReview"
+              component={AddReview}
+              options={{ headerShown: false }}
+            />
+            <Stack.Screen
+              name="UsersProfile"
+              component={Userprofile1}
+              options={{ headerShown: false }}
+            />
             <Stack.Screen
               name="AllBookings"
               component={AllBookings}
@@ -87,7 +99,7 @@ function App() {
             <Stack.Screen
               name="AgencyService"
               component={AgencyService}
-              options={{ headerShown: true }}
+              options={{ headerShown: false }}
             />
             <Stack.Screen
               name="ResetPassword"
@@ -191,7 +203,7 @@ function App() {
             <Stack.Screen
               name="Search"
               component={AdvancedSearch}
-              options={{ headerShown: true }}
+              options={{ headerShown: false }}
             />
             <Stack.Screen
               name="FiltredCar"

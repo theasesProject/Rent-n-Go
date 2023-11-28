@@ -14,8 +14,12 @@ const {
   bringUsersData,
   checkPassword,
   sendResetPasswordConfirmationCode,
+<<<<<<< HEAD
   bringSortedData,
   bringInvertedSortedData,
+=======
+  reniewToken,
+>>>>>>> ac209c8b8d8f71f2dab31f40dbcd319e55e84d32
 } = require("../controller/user.Controller");
 
 // Define routes for user operations
@@ -39,5 +43,6 @@ router.post(
   "/sendResetPasswordConfirmationCode",
   sendResetPasswordConfirmationCode
 );
+router.post("/reniewToken", reniewToken);
 
 module.exports = router;

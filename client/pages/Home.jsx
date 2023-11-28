@@ -37,6 +37,10 @@ import io from "socket.io-client";
 import * as Device from "expo-device";
 import * as Notifications from "expo-notifications";
 
+// ***********************************************
+import { autoLogin } from "../store/userSlice";
+// ***********************************************
+
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldShowAlert: true,
@@ -130,7 +134,9 @@ function Home({ navigation }) {
       console.error("error coming from home", e);
     }
   };
-
+useEffect(()=>{
+  dispatch(getAllCars())
+},[])
   useEffect(() => {
     if (!loading && scrollViewRef.current) {
       scrollViewRef.current.scrollTo({
@@ -142,6 +148,7 @@ function Home({ navigation }) {
   }, [loading]);
 
   useEffect(() => {
+    dispatch(autoLogin());
     if (activeUser?.stateBlocked === true) {
       alert(
         "Sorry, your account is banned. Please contact  costumer support for assistance."

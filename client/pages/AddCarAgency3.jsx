@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
+=======
+import React, { useState, useEffect } from "react";
+>>>>>>> ac209c8b8d8f71f2dab31f40dbcd319e55e84d32
 import {
   Text,
   View,
@@ -60,7 +64,6 @@ function AddCarAgency3() {
       const updatedSelectedDocuments = await Promise.all(
         selectedAssets.map(async (file) => {
           try {
-          
             const cloudinaryResponse = await cloudinaryUpload(file.uri);
             return cloudinaryResponse;
           } catch (err) {
@@ -76,7 +79,7 @@ function AddCarAgency3() {
           ...updatedSelectedDocuments.filter((image) => image !== null),
         ],
       });
-    }else {
+    } else {
       console.log("error");
     }
   };

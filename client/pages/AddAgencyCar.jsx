@@ -9,7 +9,11 @@ import {
   Image,
 } from "react-native";
 import RNPickerSelect from "react-native-picker-select";
+<<<<<<< HEAD
 import { useEffect, useState } from "react";
+=======
+import { useState, useEffect } from "react";
+>>>>>>> ac209c8b8d8f71f2dab31f40dbcd319e55e84d32
 import { setNewCar } from "../store/carFetch";
 import { useSelector, useDispatch } from "react-redux";
 import { selectUser } from "../store/userSlice";

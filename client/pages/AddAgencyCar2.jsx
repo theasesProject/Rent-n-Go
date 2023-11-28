@@ -1,5 +1,9 @@
 import { useNavigation } from "@react-navigation/native";
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
+=======
+import React, { useState, useEffect } from "react";
+>>>>>>> ac209c8b8d8f71f2dab31f40dbcd319e55e84d32
 import {
   Dimensions,
   Image,
