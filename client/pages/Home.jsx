@@ -37,6 +37,10 @@ import io from "socket.io-client";
 import * as Device from "expo-device";
 import * as Notifications from "expo-notifications";
 
+// ***********************************************
+import { autoLogin } from "../store/userSlice";
+// ***********************************************
+
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
     shouldShowAlert: true,
@@ -142,6 +146,7 @@ useEffect(()=>{
   }, [loading]);
 
   useEffect(() => {
+    dispatch(autoLogin());
     if (activeUser?.stateBlocked === true) {
       alert(
         "Sorry, your account is banned. Please contact  costumer support for assistance."
